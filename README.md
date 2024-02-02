@@ -1,17 +1,12 @@
 #devops-sample repository
 
 
-###Summary:
-This is a realistic sample of what you'll regularly deal with in the Marketing Web Automation role.  We need several containers created in order to enable this repository to run in a local environment.
-
 
 ###Rules:
-- Get as far as you can in 30 minutes.
 - Your solution must run on a local machine.
 - Please use any and all resources available to you (AI, Google, Stack Overflow, phone a friend, etc.)
 - Use Dockerfiles and/or docker-compose.yml files - as many as you require.
 - Arrange the solution in any way you see fit.  You may create any files or folders you need, but the only existing file you can modify is `.env`
-- You are not expected to complete all of this in 30 minutes.  We're more interested in seeing your approach and how far you get in that time.
 
 
 ###Goals:
@@ -44,8 +39,3 @@ There are two bash files that need to be run as commands:
 Add a redis container.  The redis docker image should be: `redis:6.0.9`
 
 ---
-
-**When completed, please zip (zip, winzip, 7zip, gzip) all of your Dockerfiles, docker-compose.yml files, and any other files you've created or modified, and email that zip to both `devops-test@jackwarford.com` and `jack.warford@gce.com`**
-
-
-If you have any questions or require any clarification, you may reach out to me at `jack.warford@gce.com`.
