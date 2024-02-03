@@ -1,0 +1,40 @@
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=testdb
+      - DB_PORT=3306
+    restart: always
+    depends_on:
+      - mysql
+      - redis
+
+
+  mysql:
+    image: mariadb:10.5.8
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=testdb
+    ports:
+      - "3306:3306"
+    volumes:
+     - ./data/mysql:/var/lib/mysql
+     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+
+  redis:
+    image: redis:6.0.9
+    ports:
+      - "6379:6379"
+    restart: always
+  

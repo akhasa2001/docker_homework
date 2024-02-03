@@ -1,5 +1,5 @@
 1. we need to create Dockerfile for nodeJS app
-    - image: node.js:18
+    - image: node:18
     - copy app code into container + .sh commands
     - node js app should be able to run "npm install"
     - port: 3000
