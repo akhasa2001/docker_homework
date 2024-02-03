@@ -1,0 +1,29 @@
+1. we need to create Dockerfile for nodeJS app
+    - image: node.js:18
+    - copy app code into container + .sh commands
+    - node js app should be able to run "npm install"
+    - port: 3000
+    - add CMD "npm run dev"
+    - we need to estabish env variabes 
+            DB_HOST=mysql
+            DB_USER=root
+            DB_PASS=root
+            DB_NAME=testdb
+            DB_PORT=3306
+
+2. creaete a database container
+    - image: mariadb:10.5.8
+    - port: 3306
+    - env variables
+            MYSQL_HOST=mysql
+            MYSQL_USER=root
+            MYSQL_PASSWORD=root
+            MYSQL_DATABASE=testdb
+    - we need to run init.sql file within the DB
+    - volume : ./data/mysql:/var/lib/mysql
+
+3. we need redis container
+    - image: redis:6.0.9
+    - add ENV variables
+            REDIS_HOST=redis
+            REDIS_PORT=6379     
